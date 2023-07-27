@@ -1,13 +1,13 @@
-# Onedrive Request Uploader
+# SharePoint Request Uploader
 This is a very small cli tool with which you can upload a file from your terminal directly to a sharepoint file request.
 
 > **Important**
-> This tool only for submitting to sharepoint file requests, and not ordinary file uploads or anything else.
+> This tool is only for submitting to sharepoint file requests, and not ordinary file uploads or anything else.
 
 ## Purpose
-On the Microsoft SharePoint, there is a feature called "Request files". With it, a user can create a link to a folder, with which anyone can upload files to it. This is often used to collect documents from various people, without trusting them to reach each others uploads.
+On the Microsoft SharePoint, there is a feature called "Request files". With it, a user can create a link to a folder, with which anyone can upload files to it. This is often used to collect documents from various people, without trusting them to read each others uploads.
 
-Such an upload link can be created in most SharePoint using the right-click menu:
+Such an upload link can be created in most SharePoints using the right-click menu of a folder:
 ![Image showing the SharePoint OneDrive user interface](assets/screenshot.png)
 
 This results in a link that looks something like this:
@@ -18,9 +18,9 @@ https://tenant.sharepoint.com/:f:/g/personal/some_user/Ab_Hgz79wnd73t6dga6enga43
 If this link is opened in a browser, it shows a page through which it is easy to upload files to said folder by selecting them.
 
 > **Note** 
-> The "Request file" feature is not present on every SharePoint or OneDrive instance. For example when using your private OneDrive account, this feature is not available.
+> The "Request file" feature is not present on every SharePoint or OneDrive instance. For example when using your personal OneDrive account, this feature is not available.
 
-This cli provides a method to upload files to such a request programatically or directly from the terminal. You can simply specify a file and a request url and the file is being uploaded swiftly.
+This cli enables you to upload files to such a request easily directly from the terminal. You can simply specify a file and a request url, and the cli obtains the required tokens, opens a session, and uploads the file.
 
 ## Usage
 The usage of this cli is straight forward. Refer to the help page:
@@ -45,14 +45,14 @@ This page can be displayed using the `--help` option.
 - With the `--name` option you can enter a name which is shown to the owner of the request url. A firstname and lastname are both required. This defaults to `Unknown User`.
 - With the `--filename` option you can specify the name the file will have in the OneDrive folder once uploaded. This defaults to the local name of the file. This is actually an option which is not available over the official upload webpage, so use it with care.
 
-So this is how an example usage would look like:
+So this is an example of how you could use the cli:
 ```
 sharepoint-request-uploader --name "Marcel D'Avis" --filename "file-from-marcel.txt" file.txt https://tenant.sharepoint.com/:f:/g/personal/some_user/Ab_Hgz79wnd73t6dga6enga436dhjbj978eub168ghs1u
 
 ```
 
 ## Installation
-To install and use this application, you need to compile it from source. Technically, it should be able to compile on every platform, since it does not use any platform specific things. Note however, that I have only tested it on Linux.
+To install and use this cli, you need to compile it from source. Technically, it should be able to compile on every platform, since it does not use any platform specific things. Note however, that I have only tested it on Linux.
 
 To install it on Linux, make sure that you have a rust toolchain and the cargo build system installed correctly. Then, clone this repository:
 ```shell
