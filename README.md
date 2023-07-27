@@ -1,7 +1,7 @@
 # Onedrive Request Uploader
 This is a very small cli tool with which you can upload a file from your terminal directly to a sharepoint file request.
 
-> [!IMPORTANT]
+> **Important**
 > This tool only for submitting to sharepoint file requests, and not ordinary file uploads or anything else.
 
 ## Purpose
@@ -17,7 +17,7 @@ https://tenant.sharepoint.com/:f:/g/personal/some_user/Ab_Hgz79wnd73t6dga6enga43
 
 If this link is opened in a browser, it shows a page through which it is easy to upload files to said folder by selecting them.
 
-> [!NOTE] 
+> **Note** 
 > The "Request file" feature is not present on every SharePoint or OneDrive instance. For example when using your private OneDrive account, this feature is not available.
 
 This cli provides a method to upload files to such a request programatically or directly from the terminal. You can simply specify a file and a request url and the file is being uploaded swiftly.
