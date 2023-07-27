@@ -70,7 +70,7 @@ fn upload(url: &str, filename: &str, given_name: &str, family_name: &str, file: 
     let url = response.url().to_string();
 
     // Extract id from url parameters (is under ?s=the-id)
-    let id = Regex::new("s=(\\w+)")?.captures(params).and_then(|c| c.get(1)).context("found no capture")?.as_str();
+    let id = Regex::new("s=(\\w+)")?.captures(params).and_then(|c| c.get(1)).context("found no id in page url")?.as_str();
     // Extract url base from url (specifies which sharepoint to upload to and is thus important)
     let base = Regex::new("^(.+\\.\\w+)/")?.captures(&url).and_then(|c| c.get(1)).context("found no url base for upload")?.as_str();
 
